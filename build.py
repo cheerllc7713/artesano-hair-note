@@ -75,11 +75,13 @@ def main():
     (DIST / "index.html").write_text(html, encoding="utf-8")
 
     # sitemap
-    urls = [f"{site['url']}/"] + [f"{site['url']}/posts/{p['slug']}.html" for p in posts]
+    urls = [f"{site['url']}/"] + [f"{site['url']}/posts/{p['slug']}.html" for p in posts] \
+        + [f"{site['url']}/{q.stem}.html" for q in sorted((ROOT / "content/pages").glob("*.md"))]
     sm = "".join(f"<url><loc>{u}</loc></url>" for u in urls)
     (DIST / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>',
         encoding="utf-8")
+    (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {site['url']}/sitemap.xml\n", encoding="utf-8")
     print(f"built {len(posts)} posts -> {DIST}")
 
 
