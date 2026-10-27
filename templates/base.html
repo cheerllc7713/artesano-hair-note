@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site.name }}｜{{ site.tagline }}{% endblock %}</title>
+<meta name="description" content="{% block desc %}{{ site.description }}{% endblock %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="{{ root }}index.html">
+      <span class="logo-en">ARTESANO</span><span class="logo-sub">HAIR NOTE</span>
+    </a>
+    <nav class="nav">
+      <a href="{{ root }}index.html#kaizen">髪質改善</a>
+      <a href="{{ root }}index.html#color">カラー</a>
+      <a href="{{ root }}index.html#local">流山・江戸川台</a>
+      <a href="{{ root }}salon.html">サロン</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+{% block main %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <span class="logo-en">ARTESANO</span><span class="logo-sub">HAIR NOTE</span>
+      <p>{{ site.tagline }}</p>
+    </div>
+    <div class="footer-links">
+      <a href="{{ root }}about.html">監修者について</a>
+      <a href="{{ root }}salon.html">サロン情報</a>
+      <a href="{{ root }}lumere.html">オリジナルヘアケア LUMÉRE</a>
+      {% if site.salon.instagram_url %}<a href="{{ site.salon.instagram_url }}">Instagram</a>{% endif %}
+      <a href="{{ root }}policy.html">広告表記・運営方針</a>
+    </div>
+    <p class="footer-note">当サイトはアフィリエイト広告を利用しています。記事内のリンクから商品を購入された場合、運営者に報酬が支払われることがあります。</p>
+    <p class="copy">© {{ year }} {{ site.salon.name }}</p>
+  </div>
+</footer>
+</body>
+</html>

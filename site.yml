@@ -1,0 +1,23 @@
+# サイト全体の設定。ここを書き換えると全ページに反映されます。
+name: ARTESANO HAIR NOTE
+name_ja: アルテサーノ ヘアノート
+tagline: 流山市の美容師が本音で教える、髪質改善とカラーの話
+description: 千葉県流山市の美容室 Hair craft Artesano のオーナースタイリスト高木仁人が監修するヘアケアメディア。髪質改善、カラー、毎日のヘアケアをプロの目線でわかりやすく解説します。
+url: https://example.com   # 独自ドメイン取得後に変更
+
+stylist:
+  name: 高木 仁人（たかぎ まさと）
+  role: Hair craft Artesano オーナースタイリスト
+  career: 美容師歴25年
+  bio: 都内の美容室、大手美容室での勤務を経て独立。現在は2店舗を経営するオーナースタイリストとして、髪質改善とカラーを中心にサロンに立っています。
+
+salon:
+  name: Hair craft Artesano
+  name_ja: ヘアークラフト アルテサーノ
+  area: 千葉県流山市江戸川台
+  address: 千葉県流山市江戸川台西2-142 武田ビル1F
+  access: 東武アーバンパークライン 江戸川台駅から徒歩1分
+  hours: 9:00〜19:00（不定休）
+  reserve_url: https://beauty.hotpepper.jp/slnH000404954/
+  shop_url: https://artesanobase.thebase.in/
+  instagram_url: https://www.instagram.com/nagareyama_haircraft_artesano/   # InstagramのURLがあれば入れてください

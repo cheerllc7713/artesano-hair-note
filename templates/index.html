@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Nagareyama, Chiba</p>
+    <h1>流山市の美容師が<br>本音で教える、<br><em>髪質改善とカラー</em>の話</h1>
+    <p class="hero-lead">サロンで毎日お客さまの髪に触れている美容師が、広告では言いにくいことも含めて、髪のことをわかりやすく解説します。</p>
+    <a class="hero-supervisor" href="about.html">
+      <span class="avatar" aria-hidden="true">A</span>
+      <span><small>監修</small>{{ site.stylist.name }}<br><small>{{ site.stylist.role }}</small></span>
+    </a>
+  </div>
+</section>
+
+{% if posts %}
+<section class="wrap">
+  <h2 class="section-title"><span>New</span>新着記事</h2>
+  <div class="feature">
+    {% set p = posts[0] %}
+    <a class="feature-card" href="posts/{{ p.slug }}.html">
+      <div class="thumb thumb-{{ p.category }}" aria-hidden="true"><span>{{ p.category|cat }}</span></div>
+      <div class="feature-body">
+        <span class="tag">{{ p.category|cat }}</span>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description }}</p>
+        <span class="meta">{{ p.date|jdate }} ・ 約{{ p.minutes }}分で読めます</span>
+      </div>
+    </a>
+  </div>
+</section>
+{% endif %}
+
+{% for key, label in categories.items() %}
+{% set items = posts|selectattr("category", "equalto", key)|list %}
+{% if items %}
+<section class="wrap cat-section" id="{{ key }}">
+  <h2 class="section-title"><span>{{ key|upper }}</span>{{ label }}</h2>
+  <div class="grid">
+    {% for p in items %}
+    <a class="card" href="posts/{{ p.slug }}.html">
+      <div class="thumb thumb-{{ p.category }}" aria-hidden="true"><span>{{ p.category|cat }}</span></div>
+      <h3>{{ p.title }}</h3>
+      <span class="meta">{{ p.date|jdate }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endfor %}
+
+<section class="wrap">
+  <a class="product-band" href="lumere.html">
+    <img src="static/img/lumere-lineup.jpg" alt="LUMÉRE ケアシャンプー、シャンプー、トリートメント">
+    <div>
+      <p class="eyebrow">Original Hair Care</p>
+      <h2>サロンオリジナル「LUMÉRE」</h2>
+      <p>しっとりまとまるケアシャンプー、ふんわり軽いシャンプー、熱を味方にするトリートメント。髪質に合わせて選べます。</p>
+      <span class="btn btn-ghost">詳しく見る</span>
+    </div>
+  </a>
+  <div class="salon-band">
+    <div>
+      <p class="eyebrow">Salon</p>
+      <h2>このメディアを書いている美容室</h2>
+      <p>{{ site.salon.name }}（{{ site.salon.area }}）。髪質改善とカラーを得意とするサロンです。</p>
+    </div>
+    <a class="btn" href="salon.html">サロン情報を見る</a>
+  </div>
+</section>
+{% endblock %}

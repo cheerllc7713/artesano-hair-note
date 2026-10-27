@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}｜{{ site.name }}{% endblock %}
+{% block desc %}{{ post.description }}{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":{{ post.title|tojson }},"datePublished":"{{ post.date }}","dateModified":"{{ post.updated or post.date }}","author":{"@type":"Person","name":{{ site.stylist.name|tojson }},"jobTitle":"美容師"},"publisher":{"@type":"Organization","name":{{ site.salon.name|tojson }}}}
+</script>
+{% endblock %}
+{% block main %}
+<article class="post">
+  <header class="post-head wrap-narrow">
+    <nav class="crumbs"><a href="{{ root }}index.html">トップ</a> › <a href="{{ root }}index.html#{{ post.category }}">{{ post.category|cat }}</a></nav>
+    {% if post.goal == "affiliate" %}<p class="pr-label">PR・本記事はアフィリエイト広告を含みます</p>{% endif %}
+    <h1>{{ post.title }}</h1>
+    <p class="lead">{{ post.description }}</p>
+    <div class="byline">
+      <span class="avatar" aria-hidden="true">A</span>
+      <div>
+        <span class="by-name">監修：{{ site.stylist.name }}</span>
+        <span class="by-role">{{ site.stylist.role }}</span>
+      </div>
+      <span class="meta">{{ post.date|jdate }}{% if post.updated %}（更新 {{ post.updated|jdate }}）{% endif %} ・ 約{{ post.minutes }}分</span>
+    </div>
+  </header>
+
+  {% if post.toc %}
+  <nav class="toc wrap-narrow">
+    <p>この記事の内容</p>
+    <ol>{% for t in post.toc %}<li><a href="#{{ t.id }}">{{ t.name }}</a></li>{% endfor %}</ol>
+  </nav>
+  {% endif %}
+
+  <div class="prose wrap-narrow">
+    {{ post.html|safe }}
+  </div>
+
+  <div class="wrap-narrow">
+    {% if post.goal == "shop" %}
+    <aside class="cta cta-shop">
+      <img src="{{ root }}static/img/lumere-lineup.jpg" alt="LUMÉRE ケアシャンプー、シャンプー、トリートメント">
+      <div>
+        <p class="eyebrow">Original Hair Care</p>
+        <h2>サロンオリジナル「LUMÉRE」</h2>
+        <p>仕上がりの好みで選べる2種類のシャンプーと、ドライヤーの熱を味方にするトリートメント。サロンの仕上がりを、毎日のケアにつなげるためにつくりました。</p>
+        <div class="cta-actions"><a class="btn" href="{{ site.salon.shop_url }}">オンラインショップで見る</a><a class="btn btn-ghost" href="{{ root }}lumere.html">商品の詳しい説明</a></div>
+      </div>
+    </aside>
+    {% endif %}
+    <aside class="cta cta-salon">
+      <p class="eyebrow">Salon</p>
+      <h2>髪の悩み、一度プロに見せてみませんか</h2>
+      <p>{{ site.salon.area }}の{{ site.salon.name }}では、カウンセリングで髪の状態と履歴を確認してから、施術内容と仕上がりの目安をご説明します。</p>
+      <div class="cta-actions">
+        <a class="btn" href="{{ site.salon.reserve_url }}">予約・空き状況を見る</a>
+        <a class="btn btn-ghost" href="{{ root }}salon.html">サロン情報</a>
+      </div>
+    </aside>
+
+    <section class="author-box">
+      <span class="avatar avatar-lg" aria-hidden="true">A</span>
+      <div>
+        <p class="eyebrow">この記事の監修者</p>
+        <p class="by-name">{{ site.stylist.name }}</p>
+        <p class="by-role">{{ site.stylist.role }}／{{ site.stylist.career }}</p>
+        <p>{{ site.stylist.bio }}</p>
+      </div>
+    </section>
+
+    {% if related %}
+    <section class="related">
+      <h2 class="section-title"><span>Related</span>あわせて読みたい</h2>
+      <div class="grid grid-3">
+        {% for p in related %}
+        <a class="card" href="{{ p.slug }}.html">
+          <div class="thumb thumb-{{ p.category }}" aria-hidden="true"><span>{{ p.category|cat }}</span></div>
+          <h3>{{ p.title }}</h3>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </div>
+</article>
+{% endblock %}
