@@ -51,9 +51,10 @@
       <h2>髪の悩み、一度プロに見せてみませんか</h2>
       <p>{{ site.salon.area }}の{{ site.salon.name }}では、カウンセリングで髪の状態と履歴を確認してから、施術内容と仕上がりの目安をご説明します。</p>
       <div class="cta-actions">
-        <a class="btn" href="{{ site.salon.reserve_url }}">予約・空き状況を見る</a>
-        <a class="btn btn-ghost" href="{{ root }}salon.html">サロン情報</a>
+        <a class="btn" href="{{ site.salon.reserve_url }}">ネットで予約する</a>
+        <a class="btn btn-ghost" href="tel:{{ site.salon.tel|replace('-','') }}">電話で予約する</a>
       </div>
+      <p class="tel-note">お電話：{{ site.salon.tel }}（{{ site.salon.hours }}）</p>
     </aside>
 
     <section class="author-box">

@@ -11,13 +11,14 @@ title: サロン情報
 |---|---|
 | 住所 | {{ site.salon.address }} |
 | アクセス | {{ site.salon.access }}。運河駅・初石駅から車で約5分、流山おおたかの森駅から車で約10分 |
+| 電話番号 | {{ site.salon.tel }} |
 | 営業時間 | {{ site.salon.hours }} |
 | 駐車場 | 近隣のコインパーキングをご利用ください（お会計4,000円以上で駐車料金をサロンが負担します） |
 | 設備 | キッズスペースあり |
 | 得意なメニュー | 髪質改善、白髪ぼかし、縮毛矯正、酸性ストレート、ハイライト、デザインカラー |
 | 取り扱い商品 | サロンオリジナル「LUMÉRE」（[オンラインショップ]({{ site.salon.shop_url }})でも販売中）、ミルボン製品 |
 
-<p><a class="btn" href="{{ site.salon.reserve_url }}">ホットペッパービューティーで予約する</a>{% if site.salon.instagram_url %} <a class="btn btn-ghost" href="{{ site.salon.instagram_url }}">Instagram</a>{% endif %}</p>
+<p><a class="btn" href="{{ site.salon.reserve_url }}">ネットで予約する</a> <a class="btn btn-ghost" href="tel:{{ site.salon.tel|replace('-','') }}">電話で予約する（{{ site.salon.tel }}）</a>{% if site.salon.instagram_url %} <a class="btn btn-ghost" href="{{ site.salon.instagram_url }}">Instagram</a>{% endif %}</p>
 
 メニューと料金は、ホットペッパービューティーの予約ページで最新の情報をご確認ください。
 

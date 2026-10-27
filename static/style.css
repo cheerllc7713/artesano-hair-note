@@ -121,6 +121,7 @@ img{max-width:100%}
 .product-band img{width:100%;border-radius:12px;background:#f3f2ef}
 .product-band h2{font-family:var(--serif);margin:0 0 .4em}
 .product-band p{color:var(--ink-2)}
+.tel-note{font-size:.85rem;opacity:.8;margin:14px 0 0}
 .cta-actions{display:flex;gap:12px;flex-wrap:wrap}
 .author-box{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin:24px 0}
 .author-box p{margin:0 0 .3em}
