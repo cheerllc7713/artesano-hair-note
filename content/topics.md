@@ -7,7 +7,7 @@
 - [x] 髪質改善と縮毛矯正の違い → kaizen-vs-shukumo
 - [x] 流山・江戸川台で髪質改善サロンを選ぶポイント → nagareyama-kaizen-salon
 - [x] カラーの色持ちを良くするシャンプーの選び方 → color-shampoo
-- [ ] 白髪ぼかしとは？白髪染めとの違いと向いている人（category: color / goal: salon）
+- [x] 白髪ぼかしとは？白髪染めとの違いと向いている人 → shiraga-bokashi
 - [ ] 酸性ストレートとは？縮毛矯正との違いと「まっすぐすぎない」仕上がり（category: kaizen / goal: salon）
 - [ ] 美容師が教える、髪が傷みにくいドライヤーの乾かし方（category: homecare / goal: shop）
 - [ ] ハイライトの種類と、メリット・デメリット（category: color / goal: salon）
