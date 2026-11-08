@@ -8,7 +8,7 @@
 - [x] 流山・江戸川台で髪質改善サロンを選ぶポイント → nagareyama-kaizen-salon
 - [x] カラーの色持ちを良くするシャンプーの選び方 → color-shampoo
 - [x] 白髪ぼかしとは？白髪染めとの違いと向いている人 → shiraga-bokashi
-- [ ] 酸性ストレートとは？縮毛矯正との違いと「まっすぐすぎない」仕上がり（category: kaizen / goal: salon）
+- [x] 酸性ストレートとは？縮毛矯正との違いと「まっすぐすぎない」仕上がり（category: kaizen / goal: salon） → acid-straight
 - [ ] 美容師が教える、髪が傷みにくいドライヤーの乾かし方（category: homecare / goal: shop）
 - [ ] ハイライトの種類と、メリット・デメリット（category: color / goal: salon）
 - [ ] 湿気で広がる髪の原因と、今日からできる対策（category: homecare / goal: shop）
