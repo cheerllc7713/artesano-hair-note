@@ -9,7 +9,7 @@
 - [x] カラーの色持ちを良くするシャンプーの選び方 → color-shampoo
 - [x] 白髪ぼかしとは？白髪染めとの違いと向いている人 → shiraga-bokashi
 - [x] 酸性ストレートとは？縮毛矯正との違いと「まっすぐすぎない」仕上がり（category: kaizen / goal: salon） → acid-straight
-- [ ] 美容師が教える、髪が傷みにくいドライヤーの乾かし方（category: homecare / goal: shop）
+- [x] 美容師が教える、髪が傷みにくいドライヤーの乾かし方（category: homecare / goal: shop） → dryer-blow-dry
 - [ ] ハイライトの種類と、メリット・デメリット（category: color / goal: salon）
 - [ ] 湿気で広がる髪の原因と、今日からできる対策（category: homecare / goal: shop）
 - [ ] トリートメントの効果的な使い方｜つける量・時間・流し方（category: homecare / goal: shop）
